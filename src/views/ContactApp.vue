@@ -20,12 +20,8 @@ export default {
     },
     methods: {
         setFilter(filterBy) {
-            console.log('the filter by', filterBy)
-            console.log('the contactrs', this.contacts);
             this.currFilterBy = filterBy
-
         }
-
     },
     computed: {
         contactsToShow() {
