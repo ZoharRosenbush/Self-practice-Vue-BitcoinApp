@@ -82,7 +82,31 @@ function _createContacts() {
     console.log('creating demo contacts')
 
     const contacts = [
-       
+        {
+            "_id": "0003640269f443a5d64b32ca",
+            "name": "Oren Segal",
+            "email": "OrenSegal@renovize.com",
+            "phone": "+1 (968) 333-3824"
+        },
+        {
+            "_id": "2212640269f443a5d64b32ca",
+            "name": "Zohar Rosenbush",
+            "email": "ZoharRo@renovize.com",
+            "phone": "+1 (968) 555-3824"
+        },
+        {
+            "_id": "5556640269f443a5d64b32ca",
+            "name": "May Aviv",
+            "email": "MayAviv@renovize.com",
+            "phone": "+1 (968) 888-3824"
+        },
+        {
+            "_id": "0909640269f443a5d64b32ca",
+            "name": "Ochoa Hyde",
+            "email": "ochoahyde@renovize.com",
+            "phone": "+1 (968) 999-3824"
+        }
+
     ]
 
     localStorage.setItem('contactDB', JSON.stringify(contacts))
