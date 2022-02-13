@@ -1,4 +1,5 @@
 import { storageService } from './async-storage.service.js'
+import { bitcoinService } from './bitcoin.service.js'
 
 const STORAGE_KEY = 'userDB'
 const STORAGE_KEY_LOGGEDIN = 'loggedinUser'
@@ -9,7 +10,8 @@ export const userService = {
     signup,
     getLoggedinUser,
     updateUserInfo,
-    getEmptyUser
+    getEmptyUser,
+    getBitcoinUser
 }
 
 async function login(credentials) {
@@ -55,6 +57,15 @@ function getEmptyUser() {
         username: '',
         password: '',
         fullname: '',
+    }
+}
+
+function getBitcoinUser() {
+    return {
+        username: 'Leo Oneil',
+        coins: 100,
+        moves: [],
+        bitcoinRate: bitcoinService.getRate(100)
     }
 }
 

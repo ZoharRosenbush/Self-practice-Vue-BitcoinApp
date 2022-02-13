@@ -1,6 +1,7 @@
 <script>
 
 import NewCmp from './components/NewCmp.vue';
+import Home from './views/Home.vue';
 
 export default {
   data() {
@@ -9,11 +10,15 @@ export default {
   },
   components: {
     NewCmp,
+    Home
   },
 }
 </script>
 
 <template>
-  <h1>Zohar</h1>
-  <NewCmp />
+  <section class="app-layout">
+    <!-- <AppHeader /> -->
+    <RouterView />
+    <!-- <AppFooter /> -->
+  </section>
 </template>
