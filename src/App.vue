@@ -2,6 +2,7 @@
 
 import NewCmp from './components/NewCmp.vue';
 import Home from './views/Home.vue';
+import AppHeader from './components/AppHeader.vue';
 
 export default {
   data() {
@@ -10,14 +11,15 @@ export default {
   },
   components: {
     NewCmp,
-    Home
+    Home,
+    AppHeader
   },
 }
 </script>
 
 <template>
   <section class="app-layout">
-    <!-- <AppHeader /> -->
+    <AppHeader />
     <RouterView />
     <!-- <AppFooter /> -->
   </section>
