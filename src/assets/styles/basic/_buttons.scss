@@ -5,3 +5,19 @@ button{
     border: none;
     font-size: 100%;
 }
+
+.close-btn-darkmode{
+    background-color: transparent;
+    font-family: "roboto-regular", sans-serif;
+    cursor: pointer;
+    border: none;
+    color: #f5f5f514;
+    font-size: 85%;
+    align-self: flex-end;
+    padding-inline-end: 30px;
+    &:hover {
+        color: beige;
+        transition: color 0.3s ease;
+    }
+
+}

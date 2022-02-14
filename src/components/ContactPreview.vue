@@ -8,6 +8,7 @@ export default {
 
 <template>
 <section class="contact-preview flex column align-center justify-center">
+    <button class="close-btn-darkmode">X</button>
     <div class="robohash-container">
         <img :src="`https://robohash.org/${contact.name}?set=set5`" alt="contact" />
     </div>
