@@ -26,9 +26,10 @@ export default {
         }
     },
     actions: {
-        async loadContacts({commit}){
+        async loadContacts({ commit }) {
             const contacts = await contactService.query()
-            commit({type:'setContacts',contacts})
+            console.log('the contacts', contacts);
+            commit({ type: 'setContacts', contacts })
         }
 
     }

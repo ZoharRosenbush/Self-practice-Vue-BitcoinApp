@@ -9,6 +9,10 @@ export default {
     return {}
 
   },
+  async created() {
+    await this.$store.dispatch({ type: 'loadContacts' })
+
+  },
   components: {
     NewCmp,
     Home,

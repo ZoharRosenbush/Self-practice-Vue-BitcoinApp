@@ -11,12 +11,8 @@ export default {
     },
     data() {
         return {
-            contacts: [],
             currFilterBy: null
         }
-    },
-    async created() {
-        this.contacts = await contactService.query()
     },
     methods: {
         setFilter(filterBy) {
@@ -24,6 +20,9 @@ export default {
         }
     },
     computed: {
+        contacts() {
+            return this.$store.getters.contacts
+        },
         contactsToShow() {
             if (!this.currFilterBy) return this.contacts
             const regex = new RegExp(this.currFilterBy.name, 'i')
@@ -39,6 +38,6 @@ export default {
 <template>
     <section class="contact-app">
         <ContactFilter @set-filter="setFilter" />
-        <ContactList :contacts="contactsToShow" />
+        <ContactList v-if="contacts" :contacts="contactsToShow" />
     </section>
 </template>
