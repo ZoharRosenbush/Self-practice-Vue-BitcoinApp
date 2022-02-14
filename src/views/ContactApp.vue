@@ -17,15 +17,6 @@ export default {
         setFilter(filterBy) {
             this.currFilterBy = filterBy
         },
-        async removeContact(contactId){
-            try{
-                await this.$store.dispatch({type:'removeContact',contactId})
-
-            }catch(err){
-                console.log('cannot remove contact')
-            }
-
-        }
     },
     computed: {
         contacts() {
@@ -45,7 +36,11 @@ export default {
 
 <template>
     <section class="contact-app">
-        <ContactFilter @set-filter="setFilter" />
-        <ContactList @remove="removeContact" v-if="contacts" :contacts="contactsToShow" />
+        <section class="app-controllers flex justify-between">
+            <ContactFilter @set-filter="setFilter" />
+            <RouterLink class="clean-link" to="/contacts/edit">Add contact</RouterLink>
+        </section>
+        <ContactList v-if="contacts" :contacts="contactsToShow" />
+        <RouterView />
     </section>
 </template>

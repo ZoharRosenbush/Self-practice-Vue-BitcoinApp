@@ -3,13 +3,12 @@ import { contactService } from '../../services/contact.service';
 export default {
     strict: true,
     state: {
-        contacts: null
-
+        contacts: null,
     },
     getters: {
         contacts(state) {
             return state.contacts;
-        }
+        },
     },
     mutations: {
         setContacts(state, { contacts }) {

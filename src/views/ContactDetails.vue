@@ -9,8 +9,6 @@ export default {
     async created() {
         const { id } = this.$route.params
         this.contact = await contactService.getById(id)
-        console.log('the contact', this.contact);
-
     }
 }
 </script>
@@ -21,6 +19,7 @@ export default {
         <h2>{{ contact.name }}</h2>
         <h6>{{ contact.phone }}</h6>
         <h6>{{ contact.email }}</h6>
+        <!-- <RouterLink to="/contacts/edit/:id?">Back</RouterLink> -->
         <RouterLink to="/contacts">Back</RouterLink>
     </section>
 </template>

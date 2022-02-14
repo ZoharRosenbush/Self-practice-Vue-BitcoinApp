@@ -7,6 +7,7 @@ export const contactService = {
     getById,
     save,
     remove,
+    getEmptyContact
 }
 
 
@@ -36,6 +37,15 @@ async function save(contactToSave) {
 
 function remove(contactId) {
     return storageService.remove(STORAGE_KEY, contactId)
+}
+
+function getEmptyContact() {
+    return {
+        name: '',
+        email: '',
+        phone: ''
+
+    }
 }
 
 
