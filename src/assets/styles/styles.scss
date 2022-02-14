@@ -1,12 +1,14 @@
 //SETUP
+@import './setup/functions';
+@import './setup/mixins';
+@import './setup/typography';
+@import './setup/variables';
 
 // BASIC
-@import './basic/_fonts';
 @import './basic/_basic';
-// @import './basic/_variables';
 @import './basic/_buttons';
 @import './basic/_helpers';
-@import './basic/_typography';
+
 
 //CMPS
 @import './cmps/app-header';

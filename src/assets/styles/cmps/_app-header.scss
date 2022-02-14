@@ -1,5 +1,29 @@
 .app-header{
-    height: 200px;
-    padding: 10px;
-    // grid-column: 2;
+    height: 100px;
+    padding: 10px 20px;
+    background-color: #111111;
+    border-bottom: 0.2px solid whitesmoke;
+    margin-bottom: 30px;
+   
+    a.logo{
+        font-family:roman, sans-serif;
+        font-weight: bolder;
+        font-size: 35px;
+        color: white;
+    }
+    a:not(:last-child){
+        margin-inline-end: 25px;
+       
+    }
+    nav{
+        a{
+            font-size: em(20px);
+            color: whitesmoke;
+            &.router-link-active{
+                color: #5f70f1;
+                // font-style: italic;
+                // border-bottom: #ce2e6c dashed 0.5px;
+            }
+         }
+    }
 }
