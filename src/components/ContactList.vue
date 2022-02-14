@@ -13,7 +13,7 @@ export default {
 
 <template>
     <section class="contact-list">
-        <ul class="clean-list">
+        <ul class="clean-list flex wrap">
             <li v-for="contact in contacts" :key="contact._id">
                 <RouterLink class="clean-link" :to="`/contacts/${contact._id}`">
                     <ContactPreview :contact="contact" />
