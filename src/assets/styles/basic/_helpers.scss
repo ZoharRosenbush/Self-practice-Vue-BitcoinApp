@@ -37,3 +37,17 @@
     margin: 0;
     padding: 0;
 }
+
+.designed-input-darkmode{
+  height: 35px;
+  width: 200px;
+  padding-inline-start: 10px;
+  background-color: transparent;
+  border: 1px solid whitesmoke;
+  border-radius: 6px;
+  color: whitesmoke;
+  ::placeholder{
+        color: red;  
+    }
+  
+}

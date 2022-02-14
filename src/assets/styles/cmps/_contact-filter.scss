@@ -1,0 +1,14 @@
+.filter{
+    margin-bottom: 10px;
+    h1{
+        margin: 0px 30px 0px 0px;
+        font-size: em(20px);
+    }
+    input:not(:last-child){
+        margin-inline-end: 25px;
+    }
+    input::placeholder{
+        color: rgba(245, 245, 245, 0.637);   
+    }
+
+}

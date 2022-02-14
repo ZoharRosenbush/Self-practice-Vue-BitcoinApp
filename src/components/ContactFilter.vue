@@ -17,9 +17,17 @@ export default {
 </script>
 
 <template>
-    <section class="filter">
-        <input type="text" placeholder="Name" v-model="filterBy.name" @input="setContactFilter" />
+    <section class="filter flex align-center">
+        <h1>Looking for a contact?</h1>
         <input
+            class="designed-input-darkmode"
+            type="text"
+            placeholder="Name"
+            v-model="filterBy.name"
+            @input="setContactFilter"
+        />
+        <input
+            class="designed-input-darkmode"
             type="number"
             placeholder="Telephone"
             v-model="filterBy.phone"
