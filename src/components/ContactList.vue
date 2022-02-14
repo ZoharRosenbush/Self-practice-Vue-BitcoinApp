@@ -6,6 +6,11 @@ export default {
     },
     components: {
         ContactPreview
+    },
+    methods: {
+        removeContact(contactId) {
+            this.$emit('remove', contactId)
+        }
     }
 
 }
@@ -16,7 +21,7 @@ export default {
         <ul class="clean-list flex wrap">
             <li v-for="contact in contacts" :key="contact._id">
                 <RouterLink class="clean-link" :to="`/contacts/${contact._id}`">
-                    <ContactPreview :contact="contact" />
+                    <ContactPreview @remove="removeContact" :contact="contact" />
                 </RouterLink>
             </li>
         </ul>

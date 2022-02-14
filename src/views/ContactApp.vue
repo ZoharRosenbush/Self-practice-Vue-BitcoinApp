@@ -1,7 +1,6 @@
 <script>
-import { contactService } from "../services/contact.service"
-import ContactList from "../components/ContactList.vue"
-import ContactFilter from "../components/ContactFilter.vue"
+import ContactList from '../components/ContactList.vue'
+import ContactFilter from '../components/ContactFilter.vue'
 
 export default {
     components: {
@@ -17,6 +16,15 @@ export default {
     methods: {
         setFilter(filterBy) {
             this.currFilterBy = filterBy
+        },
+        async removeContact(contactId){
+            try{
+                await this.$store.dispatch({type:'removeContact',contactId})
+
+            }catch(err){
+                console.log('cannot remove contact')
+            }
+
         }
     },
     computed: {
@@ -38,6 +46,6 @@ export default {
 <template>
     <section class="contact-app">
         <ContactFilter @set-filter="setFilter" />
-        <ContactList v-if="contacts" :contacts="contactsToShow" />
+        <ContactList @remove="removeContact" v-if="contacts" :contacts="contactsToShow" />
     </section>
 </template>

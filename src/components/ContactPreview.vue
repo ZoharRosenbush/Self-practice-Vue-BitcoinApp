@@ -2,13 +2,18 @@
 export default {
     props:{
         contact: Object
+    },
+    methods:{
+        onRemoveContact(contactId){
+            this.$emit('remove', contactId);
+        }
     }
 }
 </script>
 
 <template>
 <section class="contact-preview flex column align-center justify-center">
-    <button class="close-btn-darkmode">X</button>
+    <button @click.prevent="onRemoveContact(contact._id)" class="close-btn-darkmode">X</button>
     <div class="robohash-container">
         <img :src="`https://robohash.org/${contact.name}?set=set5`" alt="contact" />
     </div>

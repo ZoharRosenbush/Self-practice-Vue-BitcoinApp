@@ -19,18 +19,24 @@ export default {
             const idx = state.contacts.findIndex(contact => contact._id === contactId)
             state.contacts.splice(idx, 1)
         },
-        saveContact(state, { contactToSave }) {
-            const idx = state.contacts.findIndex(contact => contact._id === contactToSave._id)
-            if (idx === -1) state.contacts.push(contactToSave)
-            else state.contacts.splice(idx, 1, contactToSave)
+        saveContact(state, { savedContact }) {
+            const idx = state.contacts.findIndex(contact => contact._id === savedContact._id)
+            if (idx === -1) state.contacts.push(savedContact)
+            else state.contacts.splice(idx, 1, savedContact)
         }
     },
     actions: {
         async loadContacts({ commit }) {
             const contacts = await contactService.query()
-            console.log('the contacts', contacts);
             commit({ type: 'setContacts', contacts })
+        },
+        async removeContact({ commit }, { contactId }) {
+            await contactService.remove(contactId);
+            commit({ type: 'removeContact', contactId });
+        },
+        async saveContact({ commit }, { contactToSave }) {
+            const savedContact = await contactService.save(contactToSave)
+            commit({ type: 'saveContact', savedContact });
         }
-
     }
 }
