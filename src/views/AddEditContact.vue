@@ -3,12 +3,12 @@ import { contactService } from '../services/contact.service.js'
 export default {
     data() {
         return {
-            contact: null
+            contact: null,
+            isActive: true
         }
     },
     async created() {
         const { id } = this.$route.params
-        console.log('the id', this.$route.params);
         if (id) {
             this.contact = await contactService.getById(id)
         } else {
@@ -17,7 +17,21 @@ export default {
     },
     methods: {
         async saveContact() {
+            this.closeEdit()
             await this.$store.dispatch({ type: 'saveContact', contactToSave: this.contact });
+            this.$emit('contactUpdated', this.contact);
+        },
+        closeEdit() {
+            this.isActive = false
+            const { id } = this.$route.params
+            if (id) {
+                this.$router.push(`/contacts/${id}`);
+            } else {
+                this.$router.push('/contacts');
+
+            }
+
+
         }
     },
     computed: {
@@ -30,28 +44,36 @@ export default {
 </script>
 
 <template>
-    <section class="edit-contact">
-        <form @submit.prevent="saveContact" class="flex column">
-            <input
-                class="designed-input-darkmode"
-                type="text"
-                placeholder="Name"
-                v-model="contact.name"
-            />
-            <input
-                class="designed-input-darkmode"
-                type="text"
-                placeholder="Phone"
-                v-model="contact.phone"
-            />
-            <input
-                class="designed-input-darkmode"
-                type="email"
-                placeholder="Email"
-                v-model="contact.email"
-            />
-            <button>{{ btnTxt }}</button>
-        </form>
+    <section
+        v-if="isActive && this.contact"
+        @click="closeEdit"
+        class="main-screen flex justify-center align-center"
+    >
+        <section @click.stop class="edit-contact flex column align-center">
+            <button @click="closeEdit" class="close-btn">X</button>
+
+            <form @submit.prevent="saveContact" class="flex column">
+                <input
+                    class="designed-input-darkmode"
+                    type="text"
+                    placeholder="Name"
+                    v-model="contact.name"
+                />
+                <input
+                    class="designed-input-darkmode"
+                    type="text"
+                    placeholder="Phone"
+                    v-model="contact.phone"
+                />
+                <input
+                    class="designed-input-darkmode"
+                    type="email"
+                    placeholder="Email"
+                    v-model="contact.email"
+                />
+                <button>{{ btnTxt }}</button>
+            </form>
+        </section>
     </section>
 </template>
 

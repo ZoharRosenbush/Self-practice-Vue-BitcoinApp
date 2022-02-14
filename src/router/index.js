@@ -16,9 +16,9 @@ const router = createRouter({
       path: '/contacts',
       name: 'ContactApp',
       component: ContactApp,
-      children:[
+      children: [
         {
-          path: 'edit/:id?',
+          path: 'edit',
           name: 'AddEditContact',
           component: AddEditContact
         }
@@ -28,13 +28,16 @@ const router = createRouter({
     {
       path: '/contacts/:id',
       name: 'ContactDetails',
-      component: ContactDetails
+      component: ContactDetails,
+      children: [
+        {
+          path: 'edit',
+          name: 'AddEditContact',
+          component: AddEditContact,
+          props:true
+        },
+      ]
     },
-    // {
-    //   path: '/statistics',
-    //   name: 'statistics',
-    //   component: Statistics
-    // }
   ]
 })
 
