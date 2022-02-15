@@ -18,7 +18,7 @@ export default {
 
 <template>
     <section class="contact-preview flex column align-center justify-center">
-        <button @click.prevent="onRemoveContact(contact._id)" class="close-btn-darkmode">X</button>
+        <button @click.prevent="onRemoveContact(contact._id)" class="close-btn">X</button>
         <div class="robohash-container">
             <img :src="`https://robohash.org/${contact.name}?set=set5`" alt="contact" />
         </div>

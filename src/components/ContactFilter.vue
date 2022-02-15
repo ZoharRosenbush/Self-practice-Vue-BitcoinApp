@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-    <section class="filter flex align-center">
+    <section class="filter flex wrap align-center">
         <h1>Looking for a contact?</h1>
         <input
             class="designed-input-darkmode"

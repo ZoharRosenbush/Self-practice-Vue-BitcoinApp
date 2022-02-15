@@ -1,11 +1,14 @@
 <script>
 import ContactList from '../components/ContactList.vue'
 import ContactFilter from '../components/ContactFilter.vue'
+import AddEditContact from './AddEditContact.vue'
 
 export default {
     components: {
         ContactList,
-        ContactFilter
+        ContactFilter,
+        AddEditContact
+        
 
     },
     data() {
@@ -36,7 +39,7 @@ export default {
 
 <template>
     <section class="contact-app">
-        <section class="app-controllers flex justify-between">
+        <section class="app-controllers flex wrap justify-between">
             <ContactFilter @set-filter="setFilter" />
             <RouterLink class="clean-link" to="/contacts/edit">Add contact</RouterLink>
         </section>

@@ -1,3 +1,17 @@
-// .welcome-hero{
-//     grid-column: 2;
-// }
+.welcome-hero{
+    .svg-container{
+        height: 400px;
+        width: 400px;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    h1{
+        font-size: 45px;
+    }
+    p{
+        font-size: 20px;
+
+    }
+}

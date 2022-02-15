@@ -5,12 +5,19 @@
         font-size: em(25px);
         margin: 0;
     }
+}
 
-    .robohash-container{
-        img{
-            height: 100px;
-            width: 100px;
-        }
-        margin-bottom: 5px;
+.robohash-container{
+    border-radius: 50%;
+    border: 1px solid white;
+    height: 100px;
+    width: 100px;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: auto;
     }
+    margin-bottom: 5px;
 }

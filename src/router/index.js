@@ -13,6 +13,18 @@ const router = createRouter({
       component: Home
     },
     {
+      path: '/contacts/:id',
+      name: 'ContactDetails',
+      component: ContactDetails,
+      children: [
+        {
+          path: '/contacts/edit/:id',
+          name: 'EditContact',
+          component: AddEditContact,
+        },
+      ]
+    },
+    {
       path: '/contacts',
       name: 'ContactApp',
       component: ContactApp,
@@ -20,24 +32,12 @@ const router = createRouter({
         {
           path: 'edit',
           name: 'AddEditContact',
-          component: AddEditContact
+          component: AddEditContact,
         }
 
       ]
     },
-    {
-      path: '/contacts/:id',
-      name: 'ContactDetails',
-      component: ContactDetails,
-      children: [
-        {
-          path: 'edit',
-          name: 'AddEditContact',
-          component: AddEditContact,
-          props:true
-        },
-      ]
-    },
+    
   ]
 })
 

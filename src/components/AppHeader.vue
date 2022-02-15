@@ -5,7 +5,7 @@ export default {};
 
 
 <template>
-    <header class="app-header flex align-center justify-between full">
+    <header class="app-header flex wrap align-center justify-between full">
         <div class="logo-container">
             <RouterLink class="clean-link logo" to="/">BitcoinFam</RouterLink>
         </div>

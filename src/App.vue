@@ -3,6 +3,7 @@
 import NewCmp from './components/NewCmp.vue';
 import Home from './views/Home.vue';
 import AppHeader from './components/AppHeader.vue';
+import ContactApp from './views/ContactApp.vue';
 
 export default {
   data() {
@@ -16,7 +17,8 @@ export default {
   components: {
     NewCmp,
     Home,
-    AppHeader
+    AppHeader,
+    ContactApp
   },
 }
 </script>
@@ -28,3 +30,7 @@ export default {
     <!-- <AppFooter /> -->
   </section>
 </template>
+
+<style lang="scss">
+
+</style>

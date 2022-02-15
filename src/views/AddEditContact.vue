@@ -8,11 +8,13 @@ export default {
         }
     },
     async created() {
+        console.log('created');
         const { id } = this.$route.params
         if (id) {
             this.contact = await contactService.getById(id)
         } else {
             this.contact = contactService.getEmptyContact()
+            console.log('else');
         }
     },
     methods: {
@@ -50,9 +52,9 @@ export default {
         class="main-screen flex justify-center align-center"
     >
         <section @click.stop class="edit-contact flex column align-center">
-            <button @click="closeEdit" class="close-btn">X</button>
+            <button @click="closeEdit" class="close-btn black margin">X</button>
 
-            <form @submit.prevent="saveContact" class="flex column">
+            <form @submit.prevent="saveContact" class="flex column align-center">
                 <input
                     class="designed-input-darkmode"
                     type="text"
@@ -71,9 +73,10 @@ export default {
                     placeholder="Email"
                     v-model="contact.email"
                 />
-                <button>{{ btnTxt }}</button>
+                <button class="basic black">{{ btnTxt }}</button>
             </form>
         </section>
     </section>
 </template>
 
+<!-- v-if="isActive && this.contact" -->
